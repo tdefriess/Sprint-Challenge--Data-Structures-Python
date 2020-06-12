@@ -46,25 +46,13 @@ class BSTNode:
         else:
             return False
 
-    def find_duplicates(self):
-        if self.right is not None and self.value == self.right.value:
-            duplicates.append(self.value)
-
-        
-
-        if self.left is not None:
-            self.left.find_duplicates()
-
-        if self.right is not None:
-            self.right.find_duplicates()
-
 bst = BSTNode(names_1[0])
 for name in names_1[1:]:
     bst.insert(name)
 for name in names_2:
     if bst.contains(name):
         duplicates.append(name)
-bst.find_duplicates()
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
